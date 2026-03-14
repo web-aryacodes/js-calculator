@@ -13,7 +13,18 @@ function deleteLast(){
 }
 
 function calculate(){
-    display.value = eval(display.value);
+
+    let expression = display.value;
+    let result = eval(expression);
+    display.value = result;
+
+    let history = document.getElementById("history");
+
+    let entry = document.createElement("p");
+    entry.textContent = expression + " = " + result;
+
+    history.appendChild(entry);
+
 }
 
 /* Adding Keyboard Support */
@@ -39,3 +50,6 @@ document.addEventListener("keydown", function(event){
     }
 
 });
+function clearHistory(){
+    document.getElementById("history").innerHTML = "";
+}
