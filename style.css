@@ -1,5 +1,5 @@
 body{
-    background:linear-gradient(135deg, #dfe9f3, #ffffff);
+    background:linear-gradient(135deg, #366ba0, #a75757);
     font-family:Arial, Helvetica, sans-serif;
     display:flex;
     justify-content:center;
@@ -8,53 +8,72 @@ body{
     margin:0;
 }
 
+.main-container{
+    display:flex;
+    gap:0;
+    align-items:center;
+}
+
 .calculator{
-    background:#ffffff;
+    background:#c2cad4;
     padding:20px;
-    border-radius:15px;
+    border-radius:15px 0 0 15px;
     box-shadow:0 12px 30px rgba(0,0,0,0.15);
     width:280px;
+    height:100%;
+}
+
+.history-sidebar{
+    width:280px;
+    background:#ffffff;
+    border-radius:0 15px 15px 0;
+    border-left:2px solid rgba(0,0,0,0.2);
+    padding:15px;
+    box-shadow:0 12px 30px rgba(0,0,0,0.15);
+    display:flex;
+    flex-direction:column;
+    height: 440px;
+}
+
+.history-sidebar h3{
+    text-align:center;
+    margin-bottom:10px;
 }
 
 #display{
     width:100%;
-    height:55px;
-    font-size:24px;
-    text-align:right;
-    padding:10px;
-    margin-bottom:10px;
+    box-sizing:border-box;
+    background:transparent;
     border:none;
-    outline:none;
-    border-radius:10px;
-    background:#f0f4ff;
-    color:#333;
-}
-.display-container {
-  width: 320px;
-  margin-bottom: 20px;
+    font-size:28px;
+    text-align:right;
+    color:#222;
+    padding:10px 5px;
+    border-bottom:2px solid rgba(0,0,0,0.3);
+    margin-bottom:20px;
 }
 
 #history{
-    margin:10px 0;
-    font-size:13px;
-    text-align:right;
-    color:#666;
-    max-height:80px;
+    flex:1;
     overflow-y:auto;
+    font-size:14px;
+    color:#444;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
 }
 
 #history p{
-    margin:3px 0;
+    margin:4px 0;
 }
 
 #clear-history{
-    width:100%;
-    padding:8px;
+    margin-top:10px;
+    padding:10px;
     background:#ff4d4d;
     color:white;
     border:none;
     border-radius:8px;
-    margin-bottom:10px;
     cursor:pointer;
 }
 
@@ -62,11 +81,14 @@ body{
     background:#e53935;
 }
 
-
 .buttons{
     display:flex;
     flex-direction:column;
     gap:10px;
+    background:#93a2c0;
+    padding:15px;
+    border-radius:12px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.05);
 }
 
 .functions{
@@ -93,7 +115,6 @@ body{
     gap:8px;
     flex:1;
 }
-
 
 button{
     padding:14px;
