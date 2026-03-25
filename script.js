@@ -57,6 +57,7 @@ function calculate(){
         entry.textContent = expression + " = " + result;
 
         history.appendChild(entry);
+        history.scrollTop = history.scrollHeight;
     }catch{
         display.value = "Error";
     }
@@ -126,3 +127,12 @@ function adjustFontSize(){
         display.style.fontSize = "14px";
     }
 }
+
+let toggleBtn = document.getElementById("toggle-history");
+let historyBox = document.querySelector(".history-sidebar");
+let calculator = document.querySelector(".calculator");
+
+toggleBtn.addEventListener("click", function(){
+    historyBox.classList.toggle("hidden");
+    calculator.classList.toggle("full");
+});

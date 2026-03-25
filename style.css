@@ -19,20 +19,34 @@ body{
     padding:20px;
     border-radius:15px 0 0 15px;
     box-shadow:0 12px 30px rgba(0,0,0,0.15);
+
     width:280px;
-    height:100%;
+    min-width:280px;
+    max-width:280px;
+
+    height:440px;
+    flex-shrink:0;
+
+    display:flex;
+    flex-direction:column;
 }
 
 .history-sidebar{
     width:280px;
+    min-width:280px;
+
     background:#ffffff;
     border-radius:0 15px 15px 0;
     border-left:2px solid rgba(0,0,0,0.2);
-    padding:15px;
+    padding: 20px;
+
     box-shadow:0 12px 30px rgba(0,0,0,0.15);
+
     display:flex;
     flex-direction:column;
-    height: 440px;
+    height:440px;
+
+    flex-shrink:0;
 }
 
 .history-sidebar h3{
@@ -40,27 +54,38 @@ body{
     margin-bottom:10px;
 }
 
+
+.display-box{
+    height:60px;
+    border-bottom:2px solid rgba(0,0,0,0.3);
+    margin-bottom:15px;
+
+    display:flex;
+    align-items:center;
+}
+
 #display{
     width:100%;
-    box-sizing:border-box;
     background:transparent;
     border:none;
+
     font-size:28px;
     text-align:right;
     color:#222;
-    padding:10px 5px;
-    border-bottom:2px solid rgba(0,0,0,0.3);
-    margin-bottom:20px;
+
+    padding:0;
+    margin:0;
+    line-height:1;
+    height:100%;
+    display:block;   
 }
+
 
 #history{
     flex:1;
     overflow-y:auto;
     font-size:14px;
     color:#444;
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-start;
 }
 
 #history p{
@@ -81,14 +106,17 @@ body{
     background:#e53935;
 }
 
+
 .buttons{
     display:flex;
     flex-direction:column;
     gap:10px;
+
     background:#93a2c0;
     padding:15px;
     border-radius:12px;
-    box-shadow:0 4px 10px rgba(0,0,0,0.05);
+
+    flex:1;
 }
 
 .functions{
@@ -165,4 +193,33 @@ button:active{
 
 .equal:hover{
     background:linear-gradient(135deg, #218838, #2ecc71);
+}
+
+#toggle-history{
+    position:fixed;
+    top:20px;
+    right:20px;
+    z-index:1000;
+
+    padding:12px;
+    border:none;
+    border-radius:50%;
+    background:#333;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+
+#toggle-history:hover{
+    background:#000;
+}
+
+.hidden{
+    display:none;
+}
+
+.full{
+    border-radius:15px;
 }
