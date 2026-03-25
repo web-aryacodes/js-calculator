@@ -136,3 +136,17 @@ toggleBtn.addEventListener("click", function(){
     historyBox.classList.toggle("hidden");
     calculator.classList.toggle("full");
 });
+
+let themeBtn = document.getElementById("theme-toggle");
+
+themeBtn.addEventListener("click", function(){
+
+    document.body.classList.toggle("dark");
+
+    if(document.body.classList.contains("dark")){
+        themeBtn.innerText = "☀️";
+    } else {
+        themeBtn.innerText = "🌙";
+    }
+
+});
